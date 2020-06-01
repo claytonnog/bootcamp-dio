@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:13-alpine
+    environment: 
+      POSTGRES_PASSWORD: "senha123"
+    ports:
+      - "4000:5432"
+    #volumes: # adicione o volume persistente onde ficarão os dados do banco 
+    #  - /home/claytonneves/Documents/github/curso-dio/Postgres:/var/lib/postgresql/data
+    networks:
+      - db-network
+  pgadmin:
+    image: dpage/pgadmin4
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: "clayton.nog@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "senha1234"
+    ports:
+      - "4001:80"
+    depends_on: 
+      - postgres
+    networks:
+      - db-network
+
+networks:
+  db-network:
+    driver: bridge
