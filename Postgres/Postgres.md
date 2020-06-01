@@ -21,3 +21,11 @@ docker run --name pgadmin -e PGADMIN_DEFAULT_EMAIL=email_do_usuario -e PGADMIN_D
 
 Podemos utilizar o docker compose para criação e integração dos dois containers.
 
+### Referências
+https://hub.docker.com/_/postgres/
+
+https://hub.docker.com/r/dpage/pgadmin4/
+
+https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html
+
+
